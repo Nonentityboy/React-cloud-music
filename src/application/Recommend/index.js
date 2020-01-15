@@ -1,19 +1,27 @@
 import React from 'react';
 import Slider from '../../components/slider';
+import RecommendList from '../../components/list';
 
 function Recommend () {
 
   //mock 数据
-  const bannerList = [1,2,3].map (item => {
-    return { 
-      imageUrl: "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1830996896,1790652234&fm=26&gp=0.jpg",
-      imageUrl: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3893798113,2002765214&fm=26&gp=0.jpg"
+  const bannerList = [1,2,3,4].map (item => {
+    return { imageUrl: "http://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg" }
+  });
+
+  const recommendList = [1,2,3,4,5,6,7,8,9,10].map (item => {
+    return {
+      id: 1,
+      picUrl: "https://p1.music.126.net/fhmefjUfMD-8qtj3JKeHbA==/18999560928537533.jpg",
+      playCount: 17171122,
+      name: "朴树、许巍、李健、郑钧、老狼、赵雷"
     }
   });
 
   return (
     <div>
       <Slider bannerList={bannerList}></Slider>
+      <RecommendList recommendList={recommendList}></RecommendList> 
     </div>
   )
 }
