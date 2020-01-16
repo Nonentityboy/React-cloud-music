@@ -145,8 +145,6 @@ const Scroll = forwardRef((props, ref) => {
       bScroll.off('touchEnd');
     }
   }, [pullDown, pullDownDebounce, bScroll]);
-
-
   useEffect(() => {
     if(refresh && bScroll){
       bScroll.refresh();
