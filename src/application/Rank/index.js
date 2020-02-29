@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getRankList } from './store/index'
-import Loading from '../../components/loading';
+import Loading from '../../baseUI/loading';
 import {
   List, 
   ListItem,
   SongList,
   Container
 } from './style';
-import Scroll from '../../components/scroll/index';
+import Scroll from '../../baseUI/scroll/index';
 import { EnterLoading } from './../Singers/style';
 import { filterIndex } from '../../api/utils';
 import { renderRoutes } from 'react-router-config';
@@ -85,7 +85,7 @@ function Rank(props) {
 const mapStateToProps = (state) => ({
   rankList: state.getIn(['rank', 'rankList']),
   loading: state.getIn(['rank', 'loading']),
-  // songsCount: state.getIn(['player', 'playList']).size
+  songsCount: state.getIn(['player', 'playList']).size
 });
 // 映射dispatch到props上
 const mapDispatchToProps = (dispatch) => {

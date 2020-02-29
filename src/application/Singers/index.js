@@ -10,9 +10,9 @@ import {
 } from "./style";
 import { connect } from 'react-redux';
 import { getSingerList, changeCategory, changeAlpha, getHotSingerList, changeListOffset, refreshMoreSingerList, changePullUpLoading,changePullDownLoading, refreshMoreHotSingerList } from './store/actionCreators';
-import Scroll from "../../components/scroll/index";
+import Scroll from "../../baseUI/scroll/index";
 import  LazyLoad, {forceCheck} from 'react-lazyload';
-import Loading from '../../components/loading/index';
+import Loading from '../../baseUI/loading/index';
 import { renderRoutes } from 'react-router-config';
 
 function Singers(props){
@@ -108,7 +108,7 @@ const mapStateToProps = (state) => ({
   pullUpLoading: state.getIn(['singers', 'pullUpLoading']),
   pullDownLoading: state.getIn(['singers', 'pullDownLoading']),
   pageCount: state.getIn(['singers', 'pageCount']),
-  // songsCount: state.getIn(['player', 'playList']).size
+  songsCount: state.getIn(['player', 'playList']).size
 });
 const mapDispatchToProps = (dispatch) => {
   return {
